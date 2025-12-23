@@ -1,99 +1,123 @@
 /*
-  This is just a modification to add more filters
+  Discord CSS Debloater
+  --------------------
+  This is a modification to add more filters.
+  Configure in :root which filters you want active.
 */
 
-/* Debloater Settings
+/*
+:root {
+  -----------------------------------------
+  Configure changes this stylesheet makes
+  Set ones you don't want active to false
+  -----------------------------------------
+  
+  --\\--compact-title-bar: true;
+  --\\--compact-input-box: true;
+  --\\--compact-context-menu: true;
+  --\\--compact-user-menu: true;
+  --\\--compact-channel-categories: true;
+  --\\--compact-server-list: true;
 
-:root { 
-    --\\--compact-title-bar: ;
-    --\\--compact-input-box: false;
-    --\\--compact-context-menu: true;
-    --\\--compact-user-menu: true;
-    --\\--compact-channel-categories: false;
-    --\\--compact-server-list: false;
+  --\\--hide-nameplates: true;
+  --\\--hide-guild-tags: true;
+  --\\--hide-profile-effects: true;
+  --\\--hide-avatar-decorations: true;
+  --\\--hide-gradient-glow-usernames: true;
+  --\\--hide-server-boost-goal: true;
+  --\\--hide-server-activity: true;
+  --\\--hide-user-activity: true;
+  --\\--hide-context-menu-quick-reactions: true;
+  --\\--hide-hover-quick-reactions: true;
+  --\\--hide-image-edit-button: true;
+  --\\--hide-gif-button: true;
+  --\\--hide-sticker-button: true;
+  --\\--hide-emoji-button: true;
+  --\\--hide-apps-button: true;
+  --\\--hide-gift-button: true;
+  --\\--hide-help-button: true;
+  --\\--hide-shop-button: true;
+  --\\--hide-nitro-button: true;
+  --\\--hide-nitro-upsells: true;
+  --\\--hide-vencord-desktop-platform-indicator: true;
+  --\\--hide-active-now: true;
+  --\\--hide-cluttery-badges: true; /* hides quest, hypesquad, active dev, and discriminator badges */
 
-    --\\--hide-nameplates: false;
-    --\\--hide-guild-tags: false;
-    --\\--hide-profile-effects: false;
-    --\\--hide-avatar-decorations: false;
-    --\\--hide-gradient-glow-usernames: false;
-    --\\--hide-server-boost-goal: false;
-    --\\--hide-server-activity: true;
-    --\\--hide-user-activity: false;
-    --\\--hide-context-menu-quick-reactions: false;
-    --\\--hide-hover-quick-reactions: true;
-    --\\--hide-image-edit-button: true;
-    --\\--hide-gif-button: false;
-    --\\--hide-sticker-button: false;
-    --\\--hide-emoji-button: false;
-    --\\--hide-apps-button: true;
-    --\\--hide-gift-button: true;
-    --\\--hide-help-button: true;
-    --\\--hide-shop-button: false;
-    --\\--hide-nitro-button: false;
-    --\\--hide-nitro-upsells: false;
-    --\\--hide-vencord-desktop-platform-indicator: false;
-    --\\--hide-active-now: false;
-    --\\--hide-cluttery-badges: false;
-       ^ hides quest, hypesquad, active dev, and discriminator badges
+  --\\--darker-scrollbar: true;
+  --\\--darker-hovered-message: true;
+  --\\--prevent-sidebar-resizing: true;
+  --\\--fix-minor-icon-misalignments: true;
 
-    --\\--darker-scrollbar: false;
-    --\\--darker-hovered-message: false;
-    --\\--prevent-sidebar-resizing: true;
-    --\\--fix-minor-icon-misalignments: true;
-
-      Custom 
-    --\\--hide-threads-button: true;
-    --\\--hide-extra-voice-buttons: true;
-    --\\--hide-checkpoint-button: true;
-    --\\--hide-invite-server-button: true;
-    --\\--hide-server-discover-button: false;
-    --\\--hide-add-note-button: true;
-} */
+  /* Custom */
+  --\\--hide-threads-button: true;
+  --\\--hide-extra-voice-buttons: true;
+  --\\--hide-checkpoint-button: true;
+  --\\--hide-invite-server-button: true;
+  --\\--hide-server-discover-button: true;
+  --\\--hide-add-note-button: true;
+  --\\--hide-dm-video-button: true;
+  --\\--hide-dm-add-button: true;
+}
+*/
 
 @import url('https://abbie.github.io/discord-css/import.css');
 
+/* Threads Button */
 @container style(--\\--hide-threads-button: true) {
-  section[aria-label="Channel header"]
-    [role="button"][aria-label="Threads"] {
-      display: none;
-  }
-}
-
-@container style(--\\--hide-checkpoint-button: true) {
-  div[class*="c38106a3f0c3ca76-bar"]
-    div[role="button"][aria-label="Checkpoint"] {
-      display: none;
-  }
-}
-
-@container style(--\\--hide-invite-server-button: true) {
-  header[class*="f37cb1984c371ee5-header"]
-  .f37cb1984c371ee5-inviteButton,
-  header[class*="f37cb1984c371ee5-header"]
-  ._2d0abf0638bcaa3f-avatarPopover {
+  section[aria-label="Channel header"] [role="button"][aria-label="Threads"] {
     display: none;
   }
 }
 
+/* Checkpoint Button */
+@container style(--\\--hide-checkpoint-button: true) {
+  div[class*="c38106a3f0c3ca76-bar"] div[role="button"][aria-label="Checkpoint"] {
+    display: none;
+  }
+}
+
+/* Invite Server Button */
+@container style(--\\--hide-invite-server-button: true) {
+  header[class*="f37cb1984c371ee5-header"] .f37cb1984c371ee5-inviteButton,
+  header[class*="f37cb1984c371ee5-header"] ._2d0abf0638bcaa3f-avatarPopover {
+    display: none;
+  }
+}
+
+/* Extra Voice Buttons */
 @container style(--\\--hide-extra-voice-buttons: true) {
   div[class*="-micButtonParent"] button[role="switch"] {
     border-radius: var(--radius-sm) !important;
   }
-
   div[class*="-micButtonParent"] button[role="switch"] ~ button {
     display: none;
   }
 }
 
+/* Server Discover Button */
 @container style(--\\--hide-server-discover-button: true) {
   div[data-list-item-id="guildsnav___guild-discover-button"] {
     display: none;
   }
 }
 
+/* Add Note Button */
 @container style(--\\--hide-add-note-button: true) {
   div[role="button"][aria-label="Add Note (only visible to you)"] {
+    display: none;
+  }
+}
+
+/* DM Video Call Button */
+@container style(--\\--hide-dm-video-button: true) {
+  section[class*="_9293f6b2fc12398a-container"] div[role="button"][aria-label="Start Video Call"] {
+    display: none;
+  }
+}
+
+/* DM Add Friends Button */
+@container style(--\\--hide-dm-add-button: true) {
+  section[class*="_9293f6b2fc12398a-container"] div[role="button"][aria-label="Add Friends to DM"] {
     display: none;
   }
 }
