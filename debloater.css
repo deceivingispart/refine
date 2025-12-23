@@ -1,0 +1,99 @@
+/*
+  This is just a modification to add more filters
+*/
+
+/* Debloater Settings
+
+:root { 
+    --\\--compact-title-bar: ;
+    --\\--compact-input-box: false;
+    --\\--compact-context-menu: true;
+    --\\--compact-user-menu: true;
+    --\\--compact-channel-categories: false;
+    --\\--compact-server-list: false;
+
+    --\\--hide-nameplates: false;
+    --\\--hide-guild-tags: false;
+    --\\--hide-profile-effects: false;
+    --\\--hide-avatar-decorations: false;
+    --\\--hide-gradient-glow-usernames: false;
+    --\\--hide-server-boost-goal: false;
+    --\\--hide-server-activity: true;
+    --\\--hide-user-activity: false;
+    --\\--hide-context-menu-quick-reactions: false;
+    --\\--hide-hover-quick-reactions: true;
+    --\\--hide-image-edit-button: true;
+    --\\--hide-gif-button: false;
+    --\\--hide-sticker-button: false;
+    --\\--hide-emoji-button: false;
+    --\\--hide-apps-button: true;
+    --\\--hide-gift-button: true;
+    --\\--hide-help-button: true;
+    --\\--hide-shop-button: false;
+    --\\--hide-nitro-button: false;
+    --\\--hide-nitro-upsells: false;
+    --\\--hide-vencord-desktop-platform-indicator: false;
+    --\\--hide-active-now: false;
+    --\\--hide-cluttery-badges: false;
+       ^ hides quest, hypesquad, active dev, and discriminator badges
+
+    --\\--darker-scrollbar: false;
+    --\\--darker-hovered-message: false;
+    --\\--prevent-sidebar-resizing: true;
+    --\\--fix-minor-icon-misalignments: true;
+
+      Custom 
+    --\\--hide-threads-button: true;
+    --\\--hide-extra-voice-buttons: true;
+    --\\--hide-checkpoint-button: true;
+    --\\--hide-invite-server-button: true;
+    --\\--hide-server-discover-button: false;
+    --\\--hide-add-note-button: true;
+} */
+
+@import url('https://abbie.github.io/discord-css/import.css');
+
+@container style(--\\--hide-threads-button: true) {
+  section[aria-label="Channel header"]
+    [role="button"][aria-label="Threads"] {
+      display: none;
+  }
+}
+
+@container style(--\\--hide-checkpoint-button: true) {
+  div[class*="c38106a3f0c3ca76-bar"]
+    div[role="button"][aria-label="Checkpoint"] {
+      display: none;
+  }
+}
+
+@container style(--\\--hide-invite-server-button: true) {
+  header[class*="f37cb1984c371ee5-header"]
+  .f37cb1984c371ee5-inviteButton,
+  header[class*="f37cb1984c371ee5-header"]
+  ._2d0abf0638bcaa3f-avatarPopover {
+    display: none;
+  }
+}
+
+@container style(--\\--hide-extra-voice-buttons: true) {
+  div[class*="-micButtonParent"] button[role="switch"] {
+    border-radius: var(--radius-sm) !important;
+  }
+
+  div[class*="-micButtonParent"] button[role="switch"] ~ button {
+    display: none;
+  }
+}
+
+@container style(--\\--hide-server-discover-button: true) {
+  div[data-list-item-id="guildsnav___guild-discover-button"] {
+    display: none;
+  }
+}
+
+@container style(--\\--hide-add-note-button: true) {
+  div[role="button"][aria-label="Add Note (only visible to you)"] {
+    display: none;
+  }
+}
