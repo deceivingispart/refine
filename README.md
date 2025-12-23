@@ -8,3 +8,4 @@ This "theme" uses **snippets taken from Vencord server**, some of which have bee
 
 ```css
 @import url("https://i-will-put-something-here.css");
+```
