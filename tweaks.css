@@ -1,0 +1,35 @@
+/* 
+:root {
+  --tweak-rounded-server-icons: true;
+  --tweak-compact-command-picker: true;
+  --tweak-server-names: true;
+}
+/*
+
+/* Rounded Server Icons */
+@container style(--tweak-rounded-server-icons: true) {
+  [class$="folderPreview__48112"] > [class*="folderPreviewGuildIcon__48112"],
+  [data-list-item-id^="guildsnav___"] > [class$="icon__6e9f8"] {
+    border-radius: 50% !important;
+  }
+}
+
+/* Compact Command Picker */
+@container style(--tweak-compact-command-picker: true) {
+  .autocomplete__13533.outerWrapper_d1405b {
+      max-width: 500px;
+  }
+
+  /* Autocomplete Menu */
+  .autocomplete__13533.autocomplete__6b0e0 {
+      max-height: 300px;
+      width: 500px;
+  }
+}
+
+/* increase the width of server names, folde names etc  */
+@container style(--tweak-server-names: true) {
+  [class*=tooltip], [class*=Tooltip] { 
+      max-width: unset !important; 
+  }
+}
