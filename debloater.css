@@ -70,6 +70,7 @@
   --\\--hide-dm-add-button: true;
   --\\--hide-dm-pins-button: true;
   --\\--hide-dm-show-profile-button: true;
+  --\\--hide-devtools-button: true;
 }
 */
 
@@ -180,6 +181,14 @@
 @container style(--\\--hide-search-bar: true) {
   .toolbar__9293f
     > .search__49676 {
+      display: none !important;
+  }
+}
+
+/* DevTools button on title bar*/
+@container style(--\\--hide-devtools-button: true) {
+  .bar_c38106 .trailing_c38106
+    > div:has(> div[role="button"][aria-label="DevTools"]) {
       display: none !important;
   }
 }
