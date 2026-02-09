@@ -1,8 +1,10 @@
 /*
-  Discord CSS Debloater
-  --------------------
-  This modification adds extra filters, fixes, and optional UI cleanups.
-  Configure in :root which filters you want active.
+  Discord CSS Debloater Extended
+  ------------------------------
+  - Adds extra filters, fixes, and optional UI cleanups.
+  - All flags not under the "Custom Additions" category in :root
+    are from the original debloater script.
+  - Only supports English for now.
 */
 
 /*
@@ -63,8 +65,9 @@
   --\\--hide-invite-server-button: true;
   --\\--hide-server-discover-button: true;
   --\\--hide-add-note-button: true;
-  --\\--hide-inbox-button: true
+  --\\--hide-inbox-button: true;
   --\\--hide-devtools-button: true;
+  --\\--hide-navigation-buttons: true
 
   --\\--hide-dm-video-button: true;
   --\\--hide-dm-voice-button: true;
@@ -76,76 +79,43 @@
 
 @import url('https://abbie.github.io/discord-css/import.css');
 
-/* Checkpoint button (discord version of spotify wrapped) */
-@container style(--\\--hide-checkpoint-button: true) {
-  div[role="button"][aria-label="Checkpoint"] {
-    display: none;
-  }
-}
-
-/* Invite to server button in server header */
-@container style(--\\--hide-invite-server-button: true) {
-  header[class^="header_"]
-    div[role="button"][class^="inviteButton_"] {
-      display: none;
-  }
-}
-
-/* Server discovery button */
-@container style(--\\--hide-server-discover-button: true) {
-  div[data-list-item-id="guildsnav___guild-discover-button"] {
-    display: none;
-  }
-}
-
-/* Add Note button in user profile (local-only note) */
-@container style(--\\--hide-add-note-button: true) {
-  div[role="button"][aria-label="Add Note (only visible to you)"] {
-    display: none;
-  }
-}
-
-/* Start video call button */
+/* ------------------ DM Buttons ------------------ */
 @container style(--\\--hide-dm-video-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Start Video Call"] {
-      display: none;
+      display: none !important;
   }
 }
 
-/* Start voice call button */
 @container style(--\\--hide-dm-voice-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Start Voice Call"] {
-      display: none;
+      display: none !important;
   }
 }
 
-/* Add friends to DM button */
 @container style(--\\--hide-dm-add-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Add Friends to DM"] {
-      display: none;
+      display: none !important;
   }
 }
 
-/* Pinned messages button */
 @container style(--\\--hide-dm-pins-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Pinned Messages"] {
-      display: none;
+      display: none !important;
   }
 }
 
-/* Show user profile button */
 @container style(--\\--hide-dm-show-profile-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label*="Show User Profile"] {
-      display: none;
+      display: none !important;
   }
 }
 
-/* Threads button on channels (toolbar) */
+/* ------------------ Toolbar Buttons ------------------ */
 @container style(--\\--hide-threads-button: true) {
   .toolbar__9293f
     > div[role="button"][aria-label="Threads"] {
@@ -153,7 +123,6 @@
   }
 }
 
-/* Notification Settings Button (toolbar) */
 @container style(--\\--hide-notification-settings-button: true) {
   .toolbar__9293f
     > div[role="button"][aria-label="Notification Settings"] {
@@ -161,7 +130,6 @@
   }
 }
 
-/* Pinned messages button on channels (toolbar) */
 @container style(--\\--hide-pins-button: true) {
   .toolbar__9293f
     > div[role="button"][aria-label="Pinned Messages"] {
@@ -169,7 +137,6 @@
   }
 }
 
-/* Member List Toggle Button */
 @container style(--\\--hide-member-list-button: true) {
   .toolbar__9293f
     > div[role="button"][aria-label*="Member List"] {
@@ -177,7 +144,6 @@
   }
 }
 
-/* Search bar in channel (toolbar) */
 @container style(--\\--hide-search-bar: true) {
   .toolbar__9293f
     > .search__49676 {
@@ -185,7 +151,7 @@
   }
 }
 
-/* DevTools button on title bar*/
+/* ------------------ Title Bar Buttons ------------------ */
 @container style(--\\--hide-devtools-button: true) {
   .bar_c38106 .trailing_c38106
     > div:has(> div[role="button"][aria-label="DevTools"]) {
@@ -193,7 +159,6 @@
   }
 }
 
-/* Inbox button on title bar */
 @container style(--\\--hide-inbox-button: true) {
   .bar_c38106 .trailing_c38106
     > div[role="button"][aria-label="Inbox"] {
@@ -201,10 +166,40 @@
   }
 }
 
-/* Fixes for the original debloater by Abbie.
+@container style(--\\--hide-navigation-buttons: true) {
+  .leading_c38106
+    .backForwardButtons__63abb {
+      display: none !important;
+  }
+}
 
-   Disable --\\--enable-debloater-fixes if this
-   causes conflicts or unwanted behavior. */
+/* ------------------ Other Custom Additions ------------------ */
+@container style(--\\--hide-checkpoint-button: true) {
+  div[role="button"][aria-label="Checkpoint"] {
+    display: none !important;
+  }
+}
+
+@container style(--\\--hide-invite-server-button: true) {
+  header[class^="header_"]
+    div[role="button"][class^="inviteButton_"] {
+      display: none !important;
+  }
+}
+
+@container style(--\\--hide-server-discover-button: true) {
+  div[data-list-item-id="guildsnav___guild-discover-button"] {
+    display: none !important;
+  }
+}
+
+@container style(--\\--hide-add-note-button: true) {
+  div[role="button"][aria-label="Add Note (only visible to you)"] {
+    display: none !important;
+  }
+}
+
+/* ------------------ Fixes for Original Debloater ------------------ */
 @container style(--\\--enable-debloater-fixes: true) {
   @container style(--\\--hide-context-menu-quick-reactions: true) {
     div[role="menu"][aria-label="Message Actions"]
