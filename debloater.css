@@ -59,18 +59,18 @@
   --------------------------------------------------
 
   --\\--hide-threads-button: true;
-  --\\--hide-extra-voice-buttons: true;
   --\\--hide-checkpoint-button: true;
   --\\--hide-invite-server-button: true;
   --\\--hide-server-discover-button: true;
   --\\--hide-add-note-button: true;
+  --\\--hide-inbox-button: true
+  --\\--hide-devtools-button: true;
 
   --\\--hide-dm-video-button: true;
   --\\--hide-dm-voice-button: true;
   --\\--hide-dm-add-button: true;
   --\\--hide-dm-pins-button: true;
   --\\--hide-dm-show-profile-button: true;
-  --\\--hide-devtools-button: true;
 }
 */
 
@@ -189,6 +189,14 @@
 @container style(--\\--hide-devtools-button: true) {
   .bar_c38106 .trailing_c38106
     > div:has(> div[role="button"][aria-label="DevTools"]) {
+      display: none !important;
+  }
+}
+
+/* Inbox button on title bar */
+@container style(--\\--hide-inbox-button: true) {
+  .bar_c38106 .trailing_c38106
+    > div[role="button"][aria-label="Inbox"] {
       display: none !important;
   }
 }
