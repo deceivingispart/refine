@@ -48,30 +48,24 @@
   --\\--prevent-sidebar-resizing: true;
   --\\--fix-minor-icon-misalignments: true;
 
-  -- Custom 
-  --\\--hide-threads-button: true;
-  --\\--hide-extra-voice-buttons: true;
-  --\\--hide-checkpoint-button: true;
+  Custom 
   --\\--hide-invite-server-button: true;
-  --\\--hide-server-discover-button: true;
+  --\\--hide-server-discover-button: false;
   --\\--hide-add-note-button: true;
   --\\--hide-dm-video-button: true;
-  --\\--hide-dm-voice-button: true;
+  --\\--hide-dm-voice-button: false;
   --\\--hide-dm-add-button: true;
-  --\\--hide-dm-pins-button: true;
-  --\\--hide-dm-show-profile-button: true;
+  --\\--hide-dm-pins-button: false;
+  --\\--hide-dm-show-profile-button: false;
+  --\\--hide-threads-button: true;
+  --\\--hide-notification-settings-button: true;
+  --\\--hide-pins-button: true;
+  --\\--hide-member-list-button: true;
+  --\\--hide-search-bar: true;
 }
 */
 
 @import url('https://abbie.github.io/discord-css/import.css');
-
-/* Threads Button */
-@container style(--\\--hide-threads-button: true) {
-  section[aria-label="Channel header"]
-    div[role="button"][aria-label="Threads"] {
-      display: none;
-  }
-}
 
 /* Checkpoint Button */
 @container style(--\\--hide-checkpoint-button: true) {
@@ -149,5 +143,45 @@
   section[aria-label="Channel header"]
     div[role="button"][aria-label*="Show User Profile"] {
       display: none;
+  }
+}
+
+/* Threads Button */
+@container style(--\\--hide-threads-button: true) {
+  .toolbar__9293f
+    > div[role="button"][aria-label="Threads"] {
+      display: none !important;
+  }
+}
+
+/* Notification Settings Button */
+@container style(--\\--hide-notification-settings-button: true) {
+  .toolbar__9293f
+    > div[role="button"][aria-label="Notification Settings"] {
+      display: none !important;
+  }
+}
+
+/* Pinned Messages Button */
+@container style(--\\--hide-pins-button: true) {
+  .toolbar__9293f
+    > div[role="button"][aria-label="Pinned Messages"] {
+      display: none !important;
+  }
+}
+
+/* Member List Toggle Button */
+@container style(--\\--hide-member-list-button: true) {
+  .toolbar__9293f
+    > div[role="button"][aria-label*="Member List"] {
+      display: none !important;
+  }
+}
+
+/* Search Bar */
+@container style(--\\--hide-search-bar: true) {
+  .toolbar__9293f
+    > .search__49676 {
+      display: none !important;
   }
 }
