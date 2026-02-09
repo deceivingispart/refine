@@ -68,6 +68,7 @@
   --\\--hide-inbox-button: true;
   --\\--hide-devtools-button: true;
   --\\--hide-navigation-buttons: true
+  --\\--hide-top-emojis: true
 
   --\\--hide-dm-video-button: true;
   --\\--hide-dm-voice-button: true;
@@ -195,6 +196,12 @@
 
 @container style(--\\--hide-add-note-button: true) {
   div[role="button"][aria-label="Add Note (only visible to you)"] {
+    display: none !important;
+  }
+}
+
+@container style(--\\--hide-top-emojis: true) {
+  .listItems_affa7e[style="inset: 0px 0px 8px;"] > .categorySection_c656ac:first-of-type {
     display: none !important;
   }
 }
