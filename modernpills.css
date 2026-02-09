@@ -1,0 +1,31 @@
+li[class^="containerDefault_"]
+  div[class^="unread_"][class*="unreadImportant_"] {
+    width: 1px;
+    height: 36px;
+    top: 10%;
+
+    box-shadow:
+        6px 0 10px rgba(255, 255, 255, 0.6),
+        10px 0 20px rgba(255, 255, 255, 0.35);
+}
+
+
+li[class^="containerDefault_"]:has(
+  div[class^="numberBadge_"]
+)
+  div[class^="unread_"][class*="unreadImportant_"] {
+
+    background-color: var(--status-danger);
+
+    box-shadow:
+        6px 0 10px color-mix(
+          in srgb,
+          var(--status-danger) 70%,
+          transparent
+        ),
+        10px 0 20px color-mix(
+          in srgb,
+          var(--status-danger) 40%,
+          transparent
+        );
+}
