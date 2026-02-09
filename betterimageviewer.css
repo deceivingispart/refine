@@ -1,0 +1,49 @@
+/* 
+ * Better Image Viewer
+ * Original script: https://raw.githubusercontent.com/Benzeel/Bennys-Css-Snippets/refs/heads/main/ImageViewerTweaks.css
+ * Script modified to follow original design with transparent style and improved larger "X" button
+ */
+
+/* Make photo viewer scrim less dark and apply blur */
+.scrim__40128 {
+  background-color: var(--background-scrim);
+  backdrop-filter: blur(5px);
+}
+
+/* Remove extra backdrop blur on dark/midnight theme images */
+.carouselModal_d3a6f0.theme-dark.theme-midnight.images-dark.root__49fc1 {
+  backdrop-filter: none;
+}
+
+/* Theme top action buttons */
+div.topBar__6088c > .actionButtons_cc1819, 
+div.topBar__6088c > .button_aec7ab {
+  background-color: #ffffff0c;
+}
+
+/* Improve X (close) button appearance */
+div.topBar__6088c > .button_aec7ab {
+  transform: translateY(2%) scale(110%);
+}
+
+/* Styling previous & next buttons */
+div.layer_bc663c
+ > div > div > 
+ .button_aec7ab {
+  background: #5e5e5e1c;
+  display: flex;
+  place-items: center;
+}
+
+div.layer_bc663c
+ > div > div > 
+ div.button_aec7ab > .buttonInner_aec7ab {
+  border-color: #6e6e6e;
+  height: 100%;
+}
+
+/* Brighten backgrounds for transparent images to improve legibility */
+.imageWrapper.imageWrapper_af017a.media_a22bfd > .loadingOverlay_af017a {
+  background-color: #ffffff31;
+  border-radius: 8px;
+}
