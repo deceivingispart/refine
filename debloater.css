@@ -1,7 +1,7 @@
 /*
   Discord CSS Debloater
   --------------------
-  This is a modification to add more filters.
+  This modification adds extra filters, fixes, and optional UI cleanups.
   Configure in :root which filters you want active.
 */
 
@@ -11,6 +11,10 @@
   Configure changes this stylesheet makes
   Set ones you don't want active to false
   -----------------------------------------
+
+  --\\--enable-debloater-fixes: true;
+  Enables fixes for broken or outdated rules
+  in the original Debloater by Abbie.
   
   --\\--compact-title-bar: true;
   --\\--compact-input-box: true;
@@ -41,40 +45,44 @@
   --\\--hide-nitro-upsells: true;
   --\\--hide-vencord-desktop-platform-indicator: true;
   --\\--hide-active-now: true;
-  --\\--hide-cluttery-badges: true; /* hides quest, hypesquad, active dev, and discriminator badges 
+  --\\--hide-cluttery-badges: true;
+  Hides Quest, HypeSquad, Active Developer,
+  and discriminator-related badges.
 
   --\\--darker-scrollbar: true;
   --\\--darker-hovered-message: true;
   --\\--prevent-sidebar-resizing: true;
   --\\--fix-minor-icon-misalignments: true;
 
-  Custom 
-  --\\--hide-invite-server-button: true;
-  --\\--hide-server-discover-button: false;
-  --\\--hide-add-note-button: true;
-  --\\--hide-dm-video-button: true;
-  --\\--hide-dm-voice-button: false;
-  --\\--hide-dm-add-button: true;
-  --\\--hide-dm-pins-button: false;
-  --\\--hide-dm-show-profile-button: false;
+  --------------------------------------------------
+  Custom Additions
+  --------------------------------------------------
+
   --\\--hide-threads-button: true;
-  --\\--hide-notification-settings-button: true;
-  --\\--hide-pins-button: true;
-  --\\--hide-member-list-button: true;
-  --\\--hide-search-bar: true;
+  --\\--hide-extra-voice-buttons: true;
+  --\\--hide-checkpoint-button: true;
+  --\\--hide-invite-server-button: true;
+  --\\--hide-server-discover-button: true;
+  --\\--hide-add-note-button: true;
+
+  --\\--hide-dm-video-button: true;
+  --\\--hide-dm-voice-button: true;
+  --\\--hide-dm-add-button: true;
+  --\\--hide-dm-pins-button: true;
+  --\\--hide-dm-show-profile-button: true;
 }
 */
 
 @import url('https://abbie.github.io/discord-css/import.css');
 
-/* Checkpoint Button */
+/* Checkpoint button (discord version of spotify wrapped) */
 @container style(--\\--hide-checkpoint-button: true) {
   div[role="button"][aria-label="Checkpoint"] {
     display: none;
   }
 }
 
-/* Invite Server Button */
+/* Invite to server button in server header */
 @container style(--\\--hide-invite-server-button: true) {
   header[class^="header_"]
     div[role="button"][class^="inviteButton_"] {
@@ -82,31 +90,21 @@
   }
 }
 
-/* Extra Voice Buttons */
-@container style(--\\--hide-extra-voice-buttons: true) {
-  div[class*="-micButtonParent"] button[role="switch"] {
-    border-radius: var(--radius-sm) !important;
-  }
-  div[class*="-micButtonParent"] button[role="switch"] ~ button {
-    display: none;
-  }
-}
-
-/* Server Discover Button */
+/* Server discovery button */
 @container style(--\\--hide-server-discover-button: true) {
   div[data-list-item-id="guildsnav___guild-discover-button"] {
     display: none;
   }
 }
 
-/* Add Note Button */
+/* Add Note button in user profile (local-only note) */
 @container style(--\\--hide-add-note-button: true) {
   div[role="button"][aria-label="Add Note (only visible to you)"] {
     display: none;
   }
 }
 
-/* DM Video Call Button */
+/* Start video call button */
 @container style(--\\--hide-dm-video-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Start Video Call"] {
@@ -114,7 +112,7 @@
   }
 }
 
-/* DM Voice Call Button */
+/* Start voice call button */
 @container style(--\\--hide-dm-voice-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Start Voice Call"] {
@@ -122,7 +120,7 @@
   }
 }
 
-/* DM Add Friends Button */
+/* Add friends to DM button */
 @container style(--\\--hide-dm-add-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Add Friends to DM"] {
@@ -130,7 +128,7 @@
   }
 }
 
-/* DM Pinned Messages Button */
+/* Pinned messages button */
 @container style(--\\--hide-dm-pins-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label="Pinned Messages"] {
@@ -138,7 +136,7 @@
   }
 }
 
-/* DM Show User Profile Button */
+/* Show user profile button */
 @container style(--\\--hide-dm-show-profile-button: true) {
   section[aria-label="Channel header"]
     div[role="button"][aria-label*="Show User Profile"] {
@@ -146,7 +144,7 @@
   }
 }
 
-/* Threads Button */
+/* Threads button on channels (toolbar) */
 @container style(--\\--hide-threads-button: true) {
   .toolbar__9293f
     > div[role="button"][aria-label="Threads"] {
@@ -154,7 +152,7 @@
   }
 }
 
-/* Notification Settings Button */
+/* Notification Settings Button (toolbar) */
 @container style(--\\--hide-notification-settings-button: true) {
   .toolbar__9293f
     > div[role="button"][aria-label="Notification Settings"] {
@@ -162,7 +160,7 @@
   }
 }
 
-/* Pinned Messages Button */
+/* Pinned messages button on channels (toolbar) */
 @container style(--\\--hide-pins-button: true) {
   .toolbar__9293f
     > div[role="button"][aria-label="Pinned Messages"] {
@@ -178,10 +176,24 @@
   }
 }
 
-/* Search Bar */
+/* Search bar in channel (toolbar) */
 @container style(--\\--hide-search-bar: true) {
   .toolbar__9293f
     > .search__49676 {
       display: none !important;
+  }
+}
+
+/* Fixes for the original debloater by Abbie.
+
+   Disable --\\--enable-debloater-fixes if this
+   causes conflicts or unwanted behavior. */
+@container style(--\\--enable-debloater-fixes: true) {
+  @container style(--\\--hide-context-menu-quick-reactions: true) {
+    div[role="menu"][aria-label="Message Actions"]
+      > .scroller_c1e9c4
+      > div[role="group"].wrapper_f563df {
+        display: none !important;
+    }
   }
 }
