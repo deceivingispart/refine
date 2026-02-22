@@ -1,0 +1,41 @@
+@import url(https://deceivingispart.github.io/refine/SimplifiedPanelArea.css);
+@import url(https://deceivingispart.github.io/refine/debloater.css);
+@import url(https://deceivingispart.github.io/refine/modernpills.css);
+@import url(https://deceivingispart.github.io/refine/betterimageviewer.css);
+@import url(https://deceivingispart.github.io/refine/tweaks.css);
+
+@import url('https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css');
+@import url(https://raw.githubusercontent.com/amozeo/discord-css-snippets/refs/heads/main/snippets/compact-search-button.css);
+@import url(https://davart154.github.io/Themes/Snippets/Mana%20Page%20Switcher/ManaPageSwitcherSource.css);
+@import url('https://raw.githubusercontent.com/moonself/Vencord-Repos/refs/heads/main/Profile%20Popout%20Actions%20Hover');
+
+:root {
+    /* Debloater Settings */
+    --\\--hide-server-activity: true;
+    --\\--hide-context-menu-quick-reactions: true;
+    --\\--hide-hover-quick-reactions: true;
+    --\\--hide-image-edit-button: true;
+    --\\--hide-apps-button: true;
+    --\\--hide-gift-button: true;
+    --\\--hide-help-button: true;
+    --\\--prevent-sidebar-resizing: true;
+    --\\--fix-minor-icon-misalignments: true;
+
+    /* Custom */
+    --\\--enable-debloater-fixes: true;
+
+    --\\--hide-invite-server-button: true;
+    --\\--hide-top-emojis: true;
+    --\\--hide-add-note-button: true;
+    --\\--hide-dm-video-button: true;
+    --\\--hide-dm-add-button: true;
+    --\\--hide-threads-button: true;
+    --\\--hide-navigation-buttons: true;
+}
+
+:root {
+  /* Tweaks */
+  --tweak-rounded-server-icons: true;
+  --tweak-compact-command-picker: true;
+  --tweak-server-names: true;
+}
