@@ -4,10 +4,10 @@
 @import url(https://deceivingispart.github.io/refine/betterimageviewer.css);
 @import url(https://deceivingispart.github.io/refine/tweaks.css);
 
-@import url('https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css');
+@import url(https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css);
 @import url(https://raw.githubusercontent.com/amozeo/discord-css-snippets/refs/heads/main/snippets/compact-search-button.css);
-@import url(https://davart154.github.io/Themes/Snippets/Mana%20Page%20Switcher/ManaPageSwitcherSource.css);
-@import url('https://raw.githubusercontent.com/moonself/Vencord-Repos/refs/heads/main/Profile%20Popout%20Actions%20Hover');
+@import url(https://raw.githubusercontent.com/yiruzu/vencord-snippets/refs/heads/main/snippets/StickyPager/import.css);
+@import url(https://raw.githubusercontent.com/moonself/Vencord-Repos/refs/heads/main/Profile%20Popout%20Actions%20Hover);
 
 :root {
     /* Debloater Settings */
