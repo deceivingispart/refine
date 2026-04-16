@@ -66,6 +66,8 @@
   --\\--hide-dm-add-button: true;
   --\\--hide-dm-pins-button: true;
   --\\--hide-dm-show-profile-button: true;
+
+  --\\--hide-voice-button-arrows: true;
 }
 */
 
@@ -195,6 +197,13 @@
   .listItems_affa7e[style="inset: 0px 0px 8px;"] > .categorySection_c656ac:first-of-type {
     display: none !important;
   }
+}
+
+@container style(--\\--hide-voice-button-arrows: true) {
+  div[class^="audioButtonParent__"] button[role="switch"] {
+        border-radius: var(--radius-sm);
+        & ~ button { display: none; }
+    }
 }
 
 /* ------------------ Fixes for Original Debloater ------------------ */
